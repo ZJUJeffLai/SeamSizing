@@ -9,6 +9,7 @@ grayimage = rgb2gray(im);
 
 % Calculate dx and dy
 [dx, dy] = imgradient(grayimage);
+%%% [dx,dy] = imgradientxy(grayimage); %%%%
 SumOfSquare = dx.^2 + dy.^2;
 energyImg = double(sqrt(SumOfSquare));
 end

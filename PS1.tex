@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb,amsthm,enumitem, amsfonts,listings,upquote, graphicx, color}
+\usepackage[document]{ragged2e} %left justifies everything automatically
+\usepackage{algorithm, algpseudocode}
+\usepackage{fancyref}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\usepackage{apacite}
+\usepackage{geometry}
+\usepackage{adjustbox}
+\usepackage{listings}  
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+
+
+\DeclareMathOperator{\prox}{\mathbf{prox}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+
+\lstset{ 
+  tabsize=1,
+  showstringspaces=false,
+  breaklines=true,
+}
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+%%% FIX BELOW
+\usepackage{blindtext}
+\title{ECS 174 Project 1}
+
+
+%%%\date{SQ 2019}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{section}{Short Answer Problems}
+\begin{subsection}{1}
+For example if f and g are 3 by 3 filter, h is the original matrix with size of 100 by 100. By associative property of convolution, 
+
+
+If we apply filter g and then filter f to image h respectively, we will have 100 * 100 * 3 * 3  + 100 * 100 * 3 * 3  = 1800 multiplications. However, if we apply the associative property of convolution, 
+$$ f * (g * h) = (f * g) * h $$
+we combine the two filters first and then apply the combined filter to the image. By doing this, we have 3* 3 * 3 = 27 multiplications to create the 3 by 3 combined filter and then it takes 100 * 100 * 3 * 3 = 900 multiplicatoins to filter the image. totally 927 multiplications, which is much more efficient than the previouse method. 
+
+\end{subsection}
+
+\begin{subsection}{2}
+[1,1,1,1,1,0,1,1]
+
+\end{subsection}
+
+\begin{subsection}{3}
+Addictive Gaussian noise might not presere image brightnees since the intensity of all pixels will go up. 
+
+\end{subsection}
+
+\begin{subsection}{4}
+Assumption:\\
+The time for producing one unit of product is the same for all assemblies, regardeless of whether there is flaw in the assembly. 
+
+Method:\\
+Step 1: Prerecord an assembly process which we are sure that there is no flaw on. Denote the time between two products passing the camera as t. Take out 10 key images with equal amount of time distance and denote those ten pictures as the standard pictures $s_1,s_2, s_3,..,s_10$\\
+Step 2: During each t time laps, take out 10 key images for every t / 10 time laps. Lable those 10 key images as $t_1,t_2,t_3,...,t_10$\\
+
+Step 3: Compare image $t_i$ to $s_i$, for all $i = 1, 2,3,...,10$.\\
+step 3.1: Cluster based on intensity similarity to seperate the product from the backgroud of the belt, in order to reduced the difference or noice from the conveyor belt. \\
+step 3.2:Smooth the picutures to suppress noice by using Gaussian filter. Enhace the edges by using contrast filter and localize the edges.
+step 3.3: Compare the pitures with edges by using subtraction.\\
+
+
+\end{subsection}
+
+\end{section}
+
+\end{document}
