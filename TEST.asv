@@ -6,15 +6,8 @@ im = imread('inputSeamCarvingPrague.jpg');
 energyImg = energy_img(im);
 % greedy algorithm
 vertical_seam = greedy_ver_seam(energyImg);
-% Dynamic algorithm
-cumulativeEnergyMap = cumulative_min_energy_map(energyImg,'VERTICAL');
-ver_seam1 = find_vertical_seam(cumulativeEnergyMap);
-
-% compare
-dif = vertical_seam - ver_seam1;
+% Dynamic algorit
 view_seam(im,vertical_seam,'VERTICAL')
-view_seam(im,ver_seam1,'VERTICAL')
-
 
 
 % [a,ind] = min([2,3])
