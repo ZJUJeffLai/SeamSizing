@@ -1,0 +1,4 @@
+Firstly Gaussian noise is for random noise in the given image. When coming to additive
+there is chance that recent noise created position might coincide with earlier noise
+locations and this can be considered as possible flaw in the use of Additive Gaussian
+Noise.

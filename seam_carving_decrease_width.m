@@ -3,24 +3,24 @@
 
 %%  inputSeamCarvingPrague.jpg
 clc;clf;clear all;
-reducedColorImg = imread('inputSeamCarvingPrague.jpg');
+im = imread('inputSeamCarvingPrague.jpg');
 %imshow(reducedColorImg);
-energyImg = energy_img(reducedColorImg);
+energyImg = energy_img(im);
 for i = 1:100
-    [reducedColorImg,~] = decrease_width(reducedColorImg,energyImg);
-    energyImg = energy_img(reducedColorImg);
+    [im,~] = decrease_width(im,energyImg);
+    energyImg = energy_img(im);
 end
-imshow(reducedColorImg);
-imwrite(reducedColorImg,'outputReduceWidthPrague.png');
+imshow(im);
+imwrite(im,'outputReduceWidthPrague.png');
 
 %%  inputSeamCarvingMall.jpg
 clc;clf;clear all;
-reducedColorImg = imread('inputSeamCarvingMall.jpg');
+im = imread('inputSeamCarvingMall.jpg');
 %imshow(reducedColorImg);
-energyImg = energy_img(reducedColorImg);
+energyImg = energy_img(im);
 for i = 1:100
-    [reducedColorImg,~] = decrease_width(reducedColorImg,energyImg);
-    energyImg = energy_img(reducedColorImg);
+    [im,~] = decrease_width(im,energyImg);
+    energyImg = energy_img(im);
 end
-imshow(reducedColorImg);
-imwrite(reducedColorImg,'outputReduceWidthMall.png');
+imshow(im);
+imwrite(im,'outputReduceWidthMall.png');
