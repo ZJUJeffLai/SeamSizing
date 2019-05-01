@@ -1,5 +1,14 @@
 % test
 
+%{
+clc;clf;clear all;
+im1 = double(imread('lake_tahoe.jpg'));
+im1 = uint8(im1);
+imshow(im1);
+str = 'original';
+title(str);
+%}
+%{
 clc;clear;
 
 im = imread('inputSeamCarvingPrague.jpg');
@@ -14,7 +23,7 @@ ver_seam1 = find_vertical_seam(cumulativeEnergyMap);
 dif = vertical_seam - ver_seam1;
 view_seam(im,vertical_seam,'VERTICAL')
 view_seam(im,ver_seam1,'VERTICAL')
-
+%}
 
 
 % [a,ind] = min([2,3])
