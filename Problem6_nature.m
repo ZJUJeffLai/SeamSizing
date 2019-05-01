@@ -4,6 +4,7 @@
 
 %% Read the original Image
 clc;clf;clear all;
+%im1 = zeros(333,500):
 im1 = double(imread('nature.jpeg'));
 im1 = uint8(im1);
 subplot(3,1,2);
